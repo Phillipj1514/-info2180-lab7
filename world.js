@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", initiate);
 function initiate(){
     country = document.getElementById("country");
     results = document.getElementById("result");
-    document.getElementById("lookup").addEventListener("click", getData);
+    document.getElementById("lookup").addEventListener("click", getCountry);
 }
-function getData(){
+function getCountry(){
     const superhero = new XMLHttpRequest();
     superhero.onreadystatechange = function (){
         if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
