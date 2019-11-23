@@ -13,14 +13,17 @@ if(count($_REQUEST) == 2){
   $stmt = $conn->query("SELECT cities.name, cities.district, cities.population FROM countries INNER JOIN cities ON cities.country_code=countries.code WHERE countries.name LIKE '%$country%';"); 
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $country_list = "<table>
+                <thead>
                 <tr>
                   <th>City Name</th>
                   <th>District</th>
                   <th>Population</th>
                 </tr>
+                </thead>
+                <tbody>
                 ";
   foreach ($results as $row){
-    $country_list = $country_list.'
+    $country_list .= '
     <tr>
       <td>'.$row['name'].'</td>
       <td>'.$row['district'].'</td>
@@ -30,10 +33,22 @@ if(count($_REQUEST) == 2){
   //print_r($results);
 
 }else{
+ 
   $stmt = $conn->query("SELECT * FROM countries WHERE name LIKE '%$country%'");
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $country_list = "<table>
+                <thead>
+                <tr>
+                  <th>Country Name</th>
+                  <th>Continent</th>
+                  <th>Independence Year</th>
+                  <th>Head of State</th>
+                </tr>
+                </thead>
+                <tbody>
+                ";
   foreach ($results as $row){
-    $country_list = $country_list.'
+    $country_list .= '
     <tr>
       <td>'.$row['name'].'</td>
       <td>'.$row['continent'].'</td>
@@ -43,7 +58,7 @@ if(count($_REQUEST) == 2){
   }
 }
 
-$country_list = $country_list.'</table>';
+$country_list = $country_list.'</tbody></table>';
 echo $country_list
 
 ?>
