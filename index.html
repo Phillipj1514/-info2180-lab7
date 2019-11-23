@@ -14,15 +14,19 @@
 
 	<body>
 		<header class="center_header">
+			<img src="Icon.png"/>
 			<h1>World Database Lookup</h1>
 		</header>
 
 		<main class="center_body">
 			<div id="controls">
-				<label for="country">Country:</label>
-				<input id="country" type="search" name="country" placeholder="Enter country name" />
-				<button id="lookup">Lookup Country</button>
-				<button id="lookup_c">Lookup Cities</button>
+				<label for="country">Country:  </label>
+				<input id="country" class="form-control" type="search" name="country" placeholder="Enter country name" /></br>
+				<div id="button_container">
+					<button id="lookup" class="btn btn-default">Lookup Country</button>
+					<button id="lookup_c" class="btn btn-default">Lookup Cities</button>
+				</div>
+				
 			</div>
 			
 			<div id="result">

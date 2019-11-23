@@ -1,13 +1,70 @@
 /* Add your own styles */
-.center_header{
+body{
+    background-color: #f2f8fc;
+}
+#button_container{
+    margin: 5px;
+    padding: 10px;
+}
+header{
+    background-color: lightslategrey;
+    color: white;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    border-radius: 1px;
+    font-weight: bold;
 }
-.center_body{
+main{
+    padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+#lookup{
+    background-color:seagreen;
+    color: white;
+}
+#lookup_c{
+    background-color: royalblue;
+    color: white;
+
+}
+button.hover{
+    opacity: 90%;
+}
+img{
+    width: auto;
+    max-height: 80px;
+    margin:5px ;
+}
+thead{
+    background-color: white;
+    font-weight: bold;
+    vertical-align: middle
+}
+table{
+    border-radius: 4px;
+    box-shadow: black;
+}
+th,td{
+    vertical-align: middle;
+    height: 30px;
+    min-width: 100px;
+    margin: 2px;
+    padding: 3px;
+    border:0.1px solid #f5f8fa;
+
+}
+th{
+    text-align: center;
+}
+td{
+    text-align: left;
+
+}
+tr:nth-child(even) {
+    background-color: #f0f3f5;
 }
